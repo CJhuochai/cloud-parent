@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.220.128:8848
+      config: # 指定配置中心的地址和配置中心使用的数据格式
+        server-addr: 192.168.220.128:8848
+        file-extension: yml
+        namespace: f3c70c20-a2a4-4693-a502-a628d87847af
+        shared-configs:
+          - dataid: common.yml
+            refresh: true
+        extension-configs:
+          - dataid: cloud-config.yml
+            group: cloud-config
+            refresh: true
+
+          - dataid: sms.yml
+            group: cloud-config
+            refresh: true
