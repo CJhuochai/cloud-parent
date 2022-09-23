@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>server-2-web</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.huochairen</groupId>
+            <artifactId>cloud.server1.api</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

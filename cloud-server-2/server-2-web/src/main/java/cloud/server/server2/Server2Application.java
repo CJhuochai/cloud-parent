@@ -4,6 +4,7 @@ package cloud.server.server2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
  **/
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableFeignClients(basePackages = {"cloud.server.server1.api"})
 public class Server2Application {
     public static void main(String[] args) {
         SpringApplication.run(Server2Application.class,args);

@@ -5,7 +5,5 @@ server:
 spring:
   application:
     name: cloud.server-2
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.220.128:8848
+  profiles:
+    active: @profile.active@
