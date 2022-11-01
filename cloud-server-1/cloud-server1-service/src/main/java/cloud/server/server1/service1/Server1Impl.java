@@ -1,5 +1,6 @@
 package cloud.server.server1.service1;
 
+import cloud.server.common.feign.RemoteResponseJson;
 import cloud.server.server1.api.Server1Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -15,7 +16,10 @@ public class Server1Impl implements Server1Api {
     private Environment environment;
 
     @Override
-    public String getServerName() {
-        return this.environment.getProperty("spring.application.name");
+    public RemoteResponseJson getServerName() {
+        final RemoteResponseJson<String> stringRemoteResponseJson = new RemoteResponseJson<>();
+        stringRemoteResponseJson.setData(environment.getProperty("spring.application.name"));
+        int a = 1/0;
+        return stringRemoteResponseJson;
     }
 }

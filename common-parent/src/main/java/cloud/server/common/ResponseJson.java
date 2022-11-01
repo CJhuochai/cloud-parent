@@ -3,6 +3,7 @@ package cloud.server.common;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.http.HttpStatus;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -45,8 +46,7 @@ public class ResponseJson {
     }
 
     private static ResponseJson assem(Integer code, String msg, Object data){
-        final ResponseJson responseJson = new ResponseJson(code,msg,data);
-        return responseJson;
+        return new ResponseJson(code, msg, data);
     }
 
     public Map toMap(){

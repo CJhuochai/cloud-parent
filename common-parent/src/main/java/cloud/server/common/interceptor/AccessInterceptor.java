@@ -1,5 +1,6 @@
 package cloud.server.common.interceptor;
 
+import cloud.server.common.exception.BizException;
 import cloud.server.common.util.RedisUtil;
 import cloud.server.common.util.ThreadLocalHelper;
 import cn.hutool.core.util.StrUtil;
@@ -47,11 +48,12 @@ public class AccessInterceptor implements HandlerInterceptor {
     }
 
     private void info(HttpServletResponse response) throws IOException {
-        Map<String,Object> resutlMap = new HashMap<>();
+       /* Map<String,Object> resutlMap = new HashMap<>();
         resutlMap.put("code", 500);
         resutlMap.put("msg", "未登录");
         final String s = JSON.toJSONString(resutlMap);
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().print(s);
+        response.getWriter().print(s);*/
+       throw BizException.throwSimpleException("认证不通过");
     }
 }

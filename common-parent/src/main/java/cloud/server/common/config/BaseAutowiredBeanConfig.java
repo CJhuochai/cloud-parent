@@ -1,5 +1,7 @@
 package cloud.server.common.config;
 
+import cloud.server.common.exception.GlobalExceptionAdvice;
+import cloud.server.common.feign.FeignLogConfig;
 import cloud.server.common.interceptor.FeignInterceptor;
 import cloud.server.common.redis.RedisConfig;
 import cloud.server.common.redis.RedissonConfig;
@@ -14,7 +16,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  * @create: 2022-10
  **/
 @Configuration
-@Import({WebMvcConfig.class, RedisConfig.class, RedissonConfig.class})
+@Import({WebMvcConfig.class, RedisConfig.class, RedissonConfig.class, FeignLogConfig.class, GlobalExceptionAdvice.class})
 public class BaseAutowiredBeanConfig {
 
     @Bean

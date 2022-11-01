@@ -22,6 +22,17 @@ public class GlobalExceptionAdvice {
 
     @ExceptionHandler(value = Exception.class)
     public Map exception(Exception e){
+        log.error(e.getMessage(),e);
         return ResponseJson.error(e.getMessage()).toMap();
+    }
+
+    @ExceptionHandler(value = RuntimeException.class)
+    public Map runtimeException(RuntimeException e){
+        log.error(e.getMessage(),e);
+        return ResponseJson.error(e.getMessage()).toMap();
+    }
+    @ExceptionHandler(value = ArithmeticException.class)
+    public void arithmeticException(ArithmeticException e){
+        log.error(ArithmeticException.class.getName(),e.getMessage());
     }
 }

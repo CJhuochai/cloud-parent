@@ -1,5 +1,6 @@
 package cloud.server.server2.controller;
 
+import cloud.server.common.feign.RemoteResponseJson;
 import cloud.server.server1.api.Server1Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ public class Controller2 {
 
     @GetMapping("/server-name")
     public Object getServerName(){
-        return this.server1Api.getServerName();
+        final RemoteResponseJson<String> serverName = this.server1Api.getServerName();
+        return serverName.getData();
     }
 }

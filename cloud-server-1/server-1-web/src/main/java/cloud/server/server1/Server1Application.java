@@ -1,9 +1,9 @@
 package cloud.server.server1;
 
 import cloud.server.common.config.BaseAutowiredBeanConfig;
-import cloud.server.common.config.WebMvcConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,8 +15,10 @@ import java.util.Iterator;
  * @author: Jian Chen
  * @create: 2022-09
  **/
-@SpringBootApplication
+/*@SpringBootApplication
 @EnableDiscoveryClient
+@EnableCircuitBreaker*/
+@SpringCloudApplication
 @Import({BaseAutowiredBeanConfig.class})
 public class Server1Application {
     public static void main(String[] args) {
